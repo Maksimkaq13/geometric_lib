@@ -9,3 +9,4 @@ def perimeter(r):
     :param число r
     :return число, которое является произведением числа 2, числа пи и числа r '''
     return 2 * math.pi * r
+print(perimeter(6))

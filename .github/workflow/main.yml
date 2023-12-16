@@ -1,0 +1,38 @@
+name: "AutoUnitTests"
+on:
+  push:
+    branches: ["cicd_409650"]
+  pull_request:
+    branches: ["cicd_409650"]
+
+jobs:
+  ubuntu_unt_test:
+    runs-on: ubuntu-autotests
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: Inst python
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.9
+      - name: unittests run
+        run: |
+          python -m unittest "circle_tests.py"
+          python -m unittest "square_tests.py"
+          python -m unittest "triangle_tests.py"
+          python -m unittest "rectangle_tests.py"
+  windows_unt_test:
+    runs-on: windows-autotests
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: Inst python
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.9
+      - name: unittests run
+        run: |
+          python -m unittest "circle_tests.py"
+          python -m unittest "square_tests.py"
+          python -m unittest "triangle_tests.py"
+          python -m unittest "rectangle_tests.py"
