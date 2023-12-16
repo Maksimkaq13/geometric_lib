@@ -7,7 +7,7 @@ on:
 
 jobs:
   ubuntu_unt_test:
-    runs-on: ubuntu-autotests
+    runs-on: ubuntu-latest
     steps:
       - name: checkout
         uses: actions/checkout@v3
@@ -22,7 +22,7 @@ jobs:
           python -m unittest "triangle_tests.py"
           python -m unittest "rectangle_tests.py"
   windows_unt_test:
-    runs-on: windows-autotests
+    runs-on: windows-latest
     steps:
       - name: checkout
         uses: actions/checkout@v3
