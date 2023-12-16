@@ -6,7 +6,7 @@ on:
     branches: ["cicd_409650"]
 
 jobs:
-  ubuntu_unt_test:
+  ubuntu-unt-test:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
@@ -21,7 +21,7 @@ jobs:
           python -m unittest "square_tests.py"
           python -m unittest "triangle_tests.py"
           python -m unittest "rectangle_tests.py"
-  windows_unt_test:
+  windows-unt-test:
     runs-on: windows-latest
     steps:
       - name: checkout
